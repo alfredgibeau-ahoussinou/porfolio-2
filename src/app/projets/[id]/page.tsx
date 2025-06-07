@@ -33,11 +33,13 @@ const projects = [
   },
 ];
 
-export default async function ProjetDetail({
-  params,
-}: {
-  params: { id: string }
-}) {
+type Props = {
+  params: {
+    id: string;
+  };
+};
+
+export default async function ProjetDetail({ params }: Props) {
   const project = projects.find(p => p.id === params.id);
   if (!project) return notFound();
   return (
