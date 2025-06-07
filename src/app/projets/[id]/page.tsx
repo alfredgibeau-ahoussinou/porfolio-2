@@ -33,7 +33,14 @@ const projects = [
   },
 ];
 
-export default function ProjetDetail({ params }: { params: { id: string } }) {
+interface PageProps {
+  params: {
+    id: string;
+  };
+  searchParams: { [key: string]: string | string[] | undefined };
+}
+
+export default function ProjetDetail({ params }: PageProps) {
   const project = projects.find(p => p.id === params.id);
   if (!project) return notFound();
   return (
