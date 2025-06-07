@@ -33,12 +33,14 @@ const projects = [
   },
 ];
 
-export default function ProjetDetail({
-  params,
-}: {
-  params: { id: string }
-}) {
-  const project = projects.find(p => p.id === params.id);
+type PageProps = {
+  params: Promise<{ id: string }>;
+  searchParams: { [key: string]: string | string[] | undefined };
+};
+
+export default async function ProjetDetail({ params }: PageProps) {
+  const resolvedParams = await params;
+  const project = projects.find(p => p.id === resolvedParams.id);
   if (!project) return notFound();
   return (
     <div className="max-w-2xl mx-auto py-16">
