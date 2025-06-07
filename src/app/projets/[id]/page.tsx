@@ -33,12 +33,11 @@ const projects = [
   },
 ];
 
-type Props = {
+export default async function ProjetDetail({
+  params,
+}: {
   params: { id: string }
-  searchParams: { [key: string]: string | string[] | undefined }
-}
-
-export default async function ProjetDetail({ params }: Props) {
+}) {
   const project = projects.find(p => p.id === params.id);
   if (!project) return notFound();
   return (
