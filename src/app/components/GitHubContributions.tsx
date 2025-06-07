@@ -9,6 +9,13 @@ interface Contribution {
   count: number;
 }
 
+interface GitHubRepo {
+  name: string;
+  stargazers_count: number;
+  description: string | null;
+  html_url: string;
+}
+
 interface GitHubStats {
   totalContributions: number;
   popularRepos: Array<{
@@ -92,7 +99,7 @@ export default function GitHubContributions() {
 
         const githubStats: GitHubStats = {
           totalContributions: formattedContributions.reduce((sum, c) => sum + c.count, 0),
-          popularRepos: reposData.map((repo: any) => ({
+          popularRepos: reposData.map((repo: GitHubRepo) => ({
             name: repo.name,
             stars: repo.stargazers_count,
             description: repo.description || 'Pas de description',

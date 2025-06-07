@@ -81,7 +81,6 @@ export default function Contact() {
     setStatus('sending');
 
     try {
-      // Simuler l'envoi du formulaire
       await new Promise(resolve => setTimeout(resolve, 1500));
       setStatus('success');
       setFormData({ name: '', email: '', subject: '', message: '' });
@@ -89,7 +88,7 @@ export default function Contact() {
       setIsDirty(false);
       localStorage.removeItem('contactFormData');
       setTimeout(() => setStatus('idle'), 3000);
-    } catch (error) {
+    } catch {
       setStatus('error');
       setTimeout(() => setStatus('idle'), 3000);
     }

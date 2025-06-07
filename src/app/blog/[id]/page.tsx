@@ -1795,7 +1795,7 @@ export default function BlogPost() {
           <div className="text-center">
             <h1 className="text-4xl font-bold mb-4">Article non trouvé</h1>
             <p className="text-gray-600 dark:text-gray-300 mb-8">
-              L'article que vous recherchez n'existe pas.
+              L&apos;article que vous recherchez n&apos;existe pas.
             </p>
             <Link
               href="/blog"

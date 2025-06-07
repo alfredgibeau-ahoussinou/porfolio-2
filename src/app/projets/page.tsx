@@ -134,7 +134,7 @@ export default function Projets() {
   const [sortBy, setSortBy] = useState("date-desc");
 
   const filteredAndSortedProjects = useMemo(() => {
-    let filtered = projects.filter(project => {
+    const filtered = projects.filter(project => {
       const matchesSearch = project.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
                           project.description.toLowerCase().includes(searchTerm.toLowerCase()) ||
                           project.technologies.some(tech => tech.toLowerCase().includes(searchTerm.toLowerCase()));
@@ -218,7 +218,7 @@ export default function Projets() {
           className="grid grid-cols-1 gap-12"
         >
           {filteredAndSortedProjects.length > 0 ? (
-            filteredAndSortedProjects.map((project, idx) => (
+            filteredAndSortedProjects.map((project) => (
               <motion.div
                 key={project.id}
                 variants={item}
@@ -323,7 +323,7 @@ export default function Projets() {
                     <p className="text-sm text-gray-600 dark:text-gray-400">{testimonial.role}</p>
                   </div>
                 </div>
-                <p className="text-gray-600 dark:text-gray-300 italic">"{testimonial.content}"</p>
+                <p className="text-gray-600 dark:text-gray-300 italic">&ldquo;{testimonial.content}&rdquo;</p>
               </motion.div>
             ))}
           </div>

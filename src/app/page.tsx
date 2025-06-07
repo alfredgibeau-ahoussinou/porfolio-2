@@ -60,7 +60,7 @@ export default function Home() {
           >
             <h2 className="text-3xl font-bold mb-4">À propos de moi</h2>
             <p className="text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
-              Passionné par le développement web et mobile, je m'efforce de créer des expériences utilisateur exceptionnelles
+              Passionné par le développement web et mobile, je m&apos;efforce de créer des expériences utilisateur exceptionnelles
               en combinant design moderne et performance technique.
             </p>
           </motion.div>
