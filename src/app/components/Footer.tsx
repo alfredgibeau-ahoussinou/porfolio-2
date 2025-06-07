@@ -11,7 +11,7 @@ export default function Footer() {
           <div>
             <h3 className="text-lg font-semibold mb-4">À propos</h3>
             <p className="text-gray-600 dark:text-gray-300">
-              Développeur web et mobile passionné, spécialisé dans la création d'applications modernes et performantes.
+              Développeur web et mobile passionné, spécialisé dans la création d&apos;applications modernes et performantes.
             </p>
           </div>
 

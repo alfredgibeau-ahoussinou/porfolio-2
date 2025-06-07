@@ -299,7 +299,7 @@ export default function Projets() {
 
         {/* Section Témoignages */}
         <div className="mt-24">
-          <h2 className="text-3xl font-bold text-center mb-12">Ce qu'en disent mes clients</h2>
+          <h2 className="text-3xl font-bold text-center mb-12">Ce qu&apos;en disent mes clients</h2>
           <div className="grid md:grid-cols-3 gap-8">
             {testimonials.map((testimonial) => (
               <motion.div

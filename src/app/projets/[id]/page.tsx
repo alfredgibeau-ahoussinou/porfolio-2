@@ -1,5 +1,6 @@
 import React from "react";
 import { notFound } from "next/navigation";
+import Image from "next/image";
 
 const projects = [
   {
@@ -38,7 +39,14 @@ export default function ProjetDetail({ params }: { params: { id: string } }) {
   return (
     <div className="max-w-2xl mx-auto py-16">
       <h1 className="text-3xl font-bold mb-4">{project.title}</h1>
-      <img src={project.image} alt={project.title} className="rounded mb-4 w-full h-64 object-cover" />
+      <div className="relative w-full h-64 mb-4">
+        <Image
+          src={project.image}
+          alt={project.title}
+          fill
+          className="rounded object-cover"
+        />
+      </div>
       <p className="mb-4 text-lg">{project.description}</p>
       <div className="text-gray-700 dark:text-gray-300">{project.details}</div>
     </div>

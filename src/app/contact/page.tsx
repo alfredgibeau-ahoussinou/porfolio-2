@@ -146,7 +146,7 @@ export default function Contact() {
         >
           <h1 className="text-4xl font-bold mb-4">Contact</h1>
           <p className="text-gray-600 dark:text-gray-300">
-            N'hésitez pas à me contacter pour toute opportunité de collaboration.
+            N&apos;hésitez pas à me contacter pour toute opportunité de collaboration.
           </p>
         </motion.div>
 
