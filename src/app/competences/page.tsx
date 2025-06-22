@@ -14,6 +14,14 @@ const competences = [
     ]
   },
   {
+    category: "Développement Backend",
+    skills: [
+      { name: "Node.js", level: 80 },
+      { name: "Express", level: 75 },
+      { name: "MongoDB", level: 70 },
+    ]
+  },
+  {
     category: "Développement Mobile",
     skills: [
       { name: "React Native", level: 75 },
