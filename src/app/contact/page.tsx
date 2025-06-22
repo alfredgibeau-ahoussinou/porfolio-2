@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { sendEmail } from './actions';
 
 const SUBJECT_OPTIONS = [
   'Proposition de projet',
@@ -79,16 +80,21 @@ export default function Contact() {
     }
 
     setStatus('sending');
+    const formDataForAction = new FormData();
+    Object.entries(formData).forEach(([key, value]) => {
+      formDataForAction.append(key, value);
+    });
 
-    try {
-      await new Promise(resolve => setTimeout(resolve, 1500));
+    const result = await sendEmail(formDataForAction);
+
+    if (result.success) {
       setStatus('success');
       setFormData({ name: '', email: '', subject: '', message: '' });
       setMessageLength(0);
       setIsDirty(false);
       localStorage.removeItem('contactFormData');
       setTimeout(() => setStatus('idle'), 3000);
-    } catch {
+    } else {
       setStatus('error');
       setTimeout(() => setStatus('idle'), 3000);
     }

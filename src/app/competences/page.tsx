@@ -6,32 +6,25 @@ const competences = [
   {
     category: "Développement Frontend",
     skills: [
-      { name: "React", icon: "⚛️" },
-      { name: "Next.js", icon: "▲" },
-      { name: "TypeScript", icon: "📘" },
-      { name: "Tailwind CSS", icon: "🎨" },
+      { name: "React", level: 90 },
+      { name: "Next.js", level: 85 },
+      { name: "TypeScript", level: 80 },
+      { name: "Tailwind CSS", level: 95 },
+      { name: "HTML5 & CSS3", level: 98 },
     ]
   },
   {
     category: "Développement Mobile",
     skills: [
-      { name: "React Native", icon: "📱" },
-      { name: "Expo", icon: "🚀" },
+      { name: "React Native", level: 75 },
     ]
   },
   {
-    category: "Design & UI/UX",
+    category: "Langages & Outils",
     skills: [
-      { name: "Figma", icon: "🎯" },
-      { name: "Adobe XD", icon: "✨" },
-    ]
-  },
-  {
-    category: "Outils & Méthodologies",
-    skills: [
-      { name: "Git", icon: "📦" },
-      { name: "Agile", icon: "🔄" },
-      { name: "Jira", icon: "📋" },
+      { name: "Python", level: 70 },
+      { name: "Git & GitHub", level: 90 },
+      { name: "Vercel", level: 85 },
     ]
   }
 ];
@@ -66,7 +59,7 @@ export default function Competences() {
         variants={container}
         initial="hidden"
         animate="show"
-        className="grid grid-cols-1 md:grid-cols-2 gap-8"
+        className="space-y-12"
       >
         {competences.map((category, idx) => (
           <motion.div
@@ -74,17 +67,24 @@ export default function Competences() {
             variants={item}
             className="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-6"
           >
-            <h2 className="text-2xl font-semibold mb-4">{category.category}</h2>
-            <div className="grid grid-cols-2 gap-4">
+            <h2 className="text-2xl font-semibold mb-6">{category.category}</h2>
+            <div className="space-y-4">
               {category.skills.map((skill, skillIdx) => (
-                <motion.div
-                  key={skillIdx}
-                  whileHover={{ scale: 1.05 }}
-                  className="flex items-center gap-2 p-3 bg-gray-100 dark:bg-gray-700 rounded-lg"
-                >
-                  <span className="text-2xl">{skill.icon}</span>
-                  <span>{skill.name}</span>
-                </motion.div>
+                <div key={skillIdx}>
+                  <div className="flex justify-between mb-1">
+                    <span className="font-medium">{skill.name}</span>
+                    <span className="text-gray-600 dark:text-gray-400">{skill.level}%</span>
+                  </div>
+                  <div className="h-2 bg-gray-200 dark:bg-gray-700 rounded-full overflow-hidden">
+                    <motion.div
+                      initial={{ width: 0 }}
+                      whileInView={{ width: `${skill.level}%` }}
+                      viewport={{ once: true }}
+                      transition={{ duration: 1, delay: skillIdx * 0.1 }}
+                      className="h-full bg-blue-600 rounded-full"
+                    />
+                  </div>
+                </div>
               ))}
             </div>
           </motion.div>
