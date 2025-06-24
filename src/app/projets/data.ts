@@ -17,4 +17,39 @@ export const images: Record<string, string> = {
   test4: "/projet2.jpg",
   "holbertonschool-Markdown2HTML": "/projet3.jpg",
   "holbertonschool-interview": "/projet4.jpg",
-}; 
+};
+
+export const projectsData = [
+  {
+    name: "smaloc",
+    description: descriptions["smaloc"],
+    image: images["smaloc"],
+    etat: "Livré",
+    technologies: ["Next.js", "TypeScript", "Prisma", "Tailwind CSS", "MongoDB", "NextAuth"],
+    lien: "/projets/smaloc",
+  },
+  {
+    name: "cvporfolio",
+    description: "Portfolio personnel moderne pour présenter mon CV, mes compétences et mes réalisations.",
+    image: images["test4"] || "/projet2.jpg",
+    etat: "Livré",
+    technologies: ["Next.js", "TypeScript", "Tailwind CSS", "Framer Motion"],
+    lien: "/projets/cvporfolio",
+  },
+  {
+    name: "Runako",
+    description: "Application e-commerce pour la vente de produits de beauté et bien-être.",
+    image: images["holbertonschool-Markdown2HTML"] || "/projet3.jpg",
+    etat: "En cours",
+    technologies: ["Next.js", "Stripe", "Prisma", "MongoDB", "Tailwind CSS"],
+    lien: "/projets/Runako",
+  },
+  {
+    name: "immo",
+    description: "Plateforme de gestion et de recherche d'annonces immobilières.",
+    image: images["holbertonschool-interview"] || "/projet4.jpg",
+    etat: "Terminé",
+    technologies: ["Next.js", "TypeScript", "Prisma", "MongoDB", "Tailwind CSS"],
+    lien: "/projets/immo",
+  },
+]; 
